@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h2>EQUIPO ANDROMEDA</h2>
+					<p>Integrantes:</p>
+					<ul>
+						<li>Johan Alonso García Hernandez</li>
+						<li>Brianda Aridel Matinez Vargas</li>
+						<li>Daniel Rodriguez Ortiz</li>
+						<li>Immanol Ruiz Guzman</li>
+						<li>Octavio Castelan Diaz</li>
+					</ul>
+				</section>
+				<section>
+					<h2>CASO</h2>
+					<p>Una cadena de farmacias con varias sucursales ubicadas en diferentes ciudades. Ofrecen una amplia gama de productos farmacéuticos, sin embargo, la farmacia necesita realizar un seguimiento detallado de su inventario de productos. Así mismo se desea guardar la información de sus trabajadores de la farmacia y debe haber un registro de todas las transacciones realizadas en la farmacia.</p>
+				</section>
+				<section>
+					<h2>MODELO ER</h2>
+					<img src="./imag/MER.png">
+				</section>
+				<section>
+					<h2>DIAGRAMA DE TRANSICION</h2>
+					<p>EMPLEADO (id_empleado, NOMBRE(id_empleado, nombre1, nombre2, apellidoM, apellidoP), DOMICILIO(id_empleado, ciudad, calle, colonia, no.interior, no.exterior), TELEFONO(id_empleado, lado, 10_digitos), correo, ine, cargo, edad, sueldo) la tabla EMPLEADO cuenta con 3 atributos compuestos los cuales serán tablas, id_empleado es la clave primaria, NOMBRE.id_empleado, DOMICILIO.id_empleado, TELEFONO.id_empleado son claves foráneas a EMPLEADO.</p>
+				</section>
+				<section>
+					<h2>DIAGRAMA DE TRANSICION</h2>
+					<p>PRODUCTO (id_producto, num_lote, NOMBRE(id_producto, nombre1, nombre2), FECHA(id_producto, año, mes, fecha_compra, fecha_caducidad), cantidad_stock, DESCRIPCION(id_producto, beneficio, costo, desventaja)) PRODUCTO cuenta con 3 atributos compuestos los cuales serán tablas, id_producto es la clave primaria, NOMBRE.id_producto, FECHA.id_producto, DESCRIPCION.id_producto son claves foráneas a PRODUCTO.</p>
+				</section>
+				<section>
+					<h2>DIAGRAMA DE TRANSICION</h2>
+					<p>TRANSACCION (id_transaccion, HISTORIAL(id_transaccion, año, mes_inicio, mes_fin, ganancias, perdidas), método_pago, total, FECHA(id_transaccion, año, mes, fecha_inicio, hora), tipo) TRANSACCION cuenta con 2 atributos compuestos los cuales serán tablas, id_transaccion es la clave primaria, HISTORIAL.id_transaccion, FECHA.id_transaccion, son claves foráneas a TRANSACCION.</p>
+				</section>
+				<section>
+					<h2>DIAGRAMA ER</h2>
+					<img src="./imag/ER.png">
+				</section>
+				<section>
+					<h2>NORMALIZACION</h2>
+					<h3>Primera Forma Normal:</h3>
+					<p>La primera forma normal (1FN) en bases de datos es un principio fundamental que establece que cada celda de una tabla debe contener un solo valor atómico, es decir, un valor que no se pueda dividir en partes más pequeñas con significado independiente. Esto implica que no debe haber grupos repetitivos de datos dentro de ninguna celda, lo que garantiza la integridad y la coherencia de los datos almacenados.</p>
+				</section>
+				<section>
+					<h2>NORMALIZACION</h2>
+					<h3>Segunda forma normal:</h3>
+					<p>En la segunda forma normal cada atributo no-clave debe depender de la clave primaria completa, no solo de una parte de ella. Una dependencia funcional es una relación entre dos atributos, donde un atributo (el determinante) determina el valor del otro (el dependiente).</p>
+				</section>
+				<section>
+					<h2>NORMALIZACION</h2>
+					<h3>Tercera forma normal:</h3>
+					<p>La tercera forma normal se basa en la segunda forma normal y busca eliminar las dependencias transitivas, que pueden generar inconsistencias en los datos. </p>
+				</section>
+				<section>
+					<h2>JOINS</h2>
+					<p>Los JOINs en SQL sirven para combinar filas de dos o más tablas basándose en un campo común entre ellas, devolviendo por tanto datos de diferentes tablas. Un JOIN se produce cuando dos o más tablas se juntan en una sentencia SQL.</p>
+					<ul>
+						<li>INNER JOIN: Devuelve todas las filas cuando hay al menos una coincidencia en ambas tablas.</li>
+						<li>LEFT JOIN: Devuelve todas las filas de la tabla de la izquierda, y las filas coincidentes de la tabla de la derecha.</li>
+						<li>RIGHT JOIN: Devuelve todas las filas de la tabla de la derecha, y las filas coincidentes de la tabla de la izquierda.</li>
+						<li>OUTER JOIN: Devuelve todas las filas de las dos tablas, la izquierda y la derecha. También se llama FULL OUTER JOIN.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>GRACIAS POR SU ATENCION</h2>
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
